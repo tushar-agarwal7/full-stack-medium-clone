@@ -2,7 +2,7 @@ import { Hono } from 'hono';
 import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { sign, verify } from 'hono/jwt';
-
+import {createPostInput,updatePostInput} from 'tushar-medium'
 
 
 export const blogRouter = new Hono<{
@@ -48,7 +48,11 @@ blogRouter.post('/', async(c) => {
   
 
   const body= await c.req.json();
-
+  const {success} =createPostInput.safeParse(body)
+	if (!success) {
+		c.status(400);
+		return c.json({ error: "invalid input" });
+	}
   try{
     const post = await prisma.post.create({
       data:{
@@ -79,6 +83,11 @@ blogRouter.put('/:id', async(c) => {
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate())
   const body= await  c.req.json()
+  const {success} =updatePostInput.safeParse(body)
+	if (!success) {
+		c.status(400);
+		return c.json({ error: "invalid input" });
+	}
   try{
     prisma.post.update({
       where:{
