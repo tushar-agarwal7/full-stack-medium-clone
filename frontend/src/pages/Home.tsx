@@ -3,7 +3,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export const Home=()=>{
     
     return <> 
-       <div className="border-b shadow-lg flex justify-between px-10 py-4">
+       <div className="  bg-yellow-500 shadow-lg flex justify-between px-10 py-4">
         <Link to={'/blogs'} className="flex flex-col justify-center cursor-pointer">
                 <img src="https://logos-world.net/wp-content/uploads/2023/07/Medium-Logo.png" className="w-30 h-20" alt="" />
         </Link>
@@ -17,14 +17,14 @@ export const Home=()=>{
 
         </div>
     </div>
-    
-    <div className="bg-gray-50/90 py-12 lg:py-24 pl-40 md:pl-20">
+    <hr  className="bg-black h-1"/>
+    <div className="bg-gray-50/90 py-12 lg:py-24 pl-40 md:pl-20  bg-yellow-500">
         <div className="container px-4 md:px-6">
           <div className="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter mt-6 sm:text-5xl">Stay curious</h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                <p className="max-w-[600px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
                 Discover stories, thinking, and expertise from writers on any topic.
                 </p>
               </div>
