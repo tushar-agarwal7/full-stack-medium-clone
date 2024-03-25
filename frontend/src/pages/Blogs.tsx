@@ -20,7 +20,7 @@ export const Blogs = () => {
             </div>
         </div>
     }
-    console.log(blogs)
+    // console.log(blogs)
 
     return <div>
         <Appbar />
@@ -28,6 +28,7 @@ export const Blogs = () => {
             <div>
                
                 {blogs.map(blog => <BlogCard
+                key={blog.id}
                     id={blog.id}
                     authorName={blog.author.name || "Anonymous"}
                     title={blog.title}
